@@ -1,6 +1,11 @@
 body {
+<<<<<<< HEAD
   padding: 0;
   margin : 0;
   font-family: -apple-system, BlinkMacSystemFont, “Segoe UI”, Roboto, Helvetica, Arial, sans-serif, “Apple Color Emoji”, “Segoe UI Emoji”, “Segoe UI Symbol”;
   background-color: #ecececec;
+=======
+  padding: 2em;
+  font-family: -apple-system, BlinkMacSystemFont, “Segoe UI”, Roboto, Helvetica, Arial, sans-serif, “Apple Color Emoji”, “Segoe UI Emoji”, “Segoe UI Symbol”;
+>>>>>>> b570e69a2b6dddb01fbe998b53254a305a666fcf
 }
