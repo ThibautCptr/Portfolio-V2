@@ -17,13 +17,21 @@ export class AppComponent {
       label : 'Afficher touts',
       routerLink : ['/projets']
     },
-  {separator : true}]
+  {
+    label: 'Ajouté un projets',
+    routerLink : ['/newProjets']
+  },
+  {
+    separator : true
+  },
+
+]
 
     ngOnInit(){
 
         Projets.forEach(element => {
           this.projects.push (
-            {label : element.Title,
+            {label : element.title,
             routerLink: ['/projets/' + element.id],
             }
           )

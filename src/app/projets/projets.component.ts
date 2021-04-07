@@ -8,7 +8,7 @@ import { Message, MessageService } from 'primeng/api';
   selector: 'app-projets',
   template: `
     <p *ngIf="this.projet != null">
-      {{this.projet.Title}}
+      {{this.projet.title}}
 
       <button class="git_link" pButton pRipple type="button" label="Retour a la listes des projets" class="p-button-raised" icon="pi pi-angle-double-left" routerLink="/projets">
           </button>
@@ -20,7 +20,7 @@ import { Message, MessageService } from 'primeng/api';
         <div class="list_projets p-shadow-6 p-col p-as-center">
           <div class="p-grid p-ai-start vertical-container">
             <div class="p-col">
-                <h3 class="header-item">{{p.Title}}</h3>
+                <h3 class="header-item">{{p.title}}</h3>
             </div>
             <div class="p-col-2 status" style="padding-top : 20px">
               <div *ngIf="p.status == 'En cours'">
@@ -34,7 +34,7 @@ import { Message, MessageService } from 'primeng/api';
           <img alt="Card" src="{{p.url_img}}">
           <p>{{p.description}}</p>
 
-          <div *ngFor="let tag of p.Tag" class="tag">
+          <div *ngFor="let tag of p.tag" class="tag">
             <div class="p-grid">
               <div class="p-col-12 p-md-6 p-lg-3">
               <p-chip label="{{tag.value}}" icon="{{tag.icon}}" styleClass="p-mr-2 custom-chip icon-color-{{tag.color}}"></p-chip>
@@ -65,7 +65,6 @@ import { Message, MessageService } from 'primeng/api';
   margin: 50px 25%;
   padding : 15px;
   background-color : white;
-  width : 50%;
 }
 
 .list_projets img {

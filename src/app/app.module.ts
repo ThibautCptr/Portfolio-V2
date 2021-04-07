@@ -17,13 +17,19 @@ import {CardModule} from 'primeng/card';
 import { TagModule } from 'primeng/tag';
 import {DataViewModule} from 'primeng/dataview';
 import { Chip, ChipModule } from 'primeng/chip';
+import { AjoutProjetsComponent } from './ajout-projets/ajout-projets.component';
+import {InputTextareaModule} from 'primeng/inputtextarea';
+import {DropdownModule} from 'primeng/dropdown';
+import { FormsModule } from '@angular/forms';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
     AboutMeComponent,
-    ProjetsComponent
+    ProjetsComponent,
+    AjoutProjetsComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +44,10 @@ import { Chip, ChipModule } from 'primeng/chip';
     CardModule,
     TagModule,
     DataViewModule,
-    ChipModule
+    ChipModule,
+    InputTextareaModule,
+    DropdownModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
