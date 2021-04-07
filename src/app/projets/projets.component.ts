@@ -9,43 +9,110 @@ import { Message, MessageService } from 'primeng/api';
   template: `
     <p *ngIf="this.projet != null">
       {{this.projet.Title}}
+
+      <button class="git_link" pButton pRipple type="button" label="Retour a la listes des projets" class="p-button-raised" icon="pi pi-angle-double-left" routerLink="/projets">
+          </button>
+
     </p>
     <div *ngIf="this.projet == null">
 
-    <p-dataView [value]="this.projets">
-    <ng-template pTemplate="header">
-        <p-dataViewLayoutOptions></p-dataViewLayoutOptions>
-    </ng-template>
-    <ng-template let-p pTemplate="listItem">
-        <div>
-        <img [src]="p.url_img" [alt]="p.Title" style="width : 50px" />
-                    <div class="product-list-detail">
-                        <div class="product-name">{{p.Title}}</div>
-                        <div class="product-description">{{p.description}}</div>
-                        <p-rating [ngModel]="product.rating" [readonly]="true" [cancel]="false"></p-rating>
-                        <i class="pi pi-tag product-category-icon"></i><span class="product-category">{{p.status}}</span>
-                        <span [class]="'product-badge status-' + product.inventoryStatus.toLowerCase()">{{product.inventoryStatus}}</span>
-                    </div>
-        </div>
-    </ng-template>
-    <ng-template let-car pTemplate="gridItem">
-        <div class="p-col-12 p-md-3">
-            {{p.year}}
-        </div>
-    </ng-template>
-    <ng-template pTemplate="footer">
-        <p-dataViewLayoutOptions></p-dataViewLayoutOptions>
-    </ng-template>
-</p-dataView>
+      <div *ngFor="let p of this.projets" class="p-grid">
+        <div class="list_projets p-shadow-6 p-col p-as-center">
+          <div class="p-grid p-ai-start vertical-container">
+            <div class="p-col">
+                <h3 class="header-item">{{p.Title}}</h3>
+            </div>
+            <div class="p-col-2 status" style="padding-top : 20px">
+              <div *ngIf="p.status == 'En cours'">
+                <p-tag styleClass="p-mr-2" value="{{p.status}}"></p-tag>
+              </div>
+              <div *ngIf="p.status == 'Terminé'">
+              <p-tag styleClass="p-mr-2" severity="danger" value="{{p.status}}"></p-tag>
+              </div>
+            </div>
+          </div>
+          <img alt="Card" src="{{p.url_img}}">
+          <p>{{p.description}}</p>
+
+          <div *ngFor="let tag of p.Tag" class="tag">
+            <div class="p-grid">
+              <div class="p-col-12 p-md-6 p-lg-3">
+              <p-chip label="{{tag.value}}" icon="{{tag.icon}}" styleClass="p-mr-2 custom-chip icon-color-{{tag.color}}"></p-chip>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="p-grid vertical-container">
+            <div class="p-col p-as-end">
+              <button class="git_link" pButton pRipple type="button" label="En savoir plus" class="p-button-raised p-mb-8" icon="pi pi-angle-double-right" routerLink="/projets/{{p.id}}">
+              </button>
+            </div>
+            <div class="p-col p-as-end">
+              <button class="git_link" pButton pRipple type="button" label="Voir le projet" class="p-button-raised" icon="pi pi-github" style="float : right" (click)="redirectLink(p.git_link)">
+              </button>
+            </div>
+          </div>
 
 
-    </div>
+          </div>
+        </div>
+      </div>
+
   `,
   styles: [ `
-  tag_card {
-    display : inline;
-    positon : absolute;
-  }
+.list_projets {
+  margin: 50px 25%;
+  padding : 15px;
+  background-color : white;
+  width : 50%;
+}
+
+.list_projets img {
+  border: #929292ec 3px solid;
+  width: calc(100% - 60%);
+  height: calc(100% - 40%);
+  margin-right: 25px;
+  align-items: center;
+  float : left;
+
+}
+
+.header-item {
+    color: #000000;
+    opacity: 75%;
+    text-shadow: #929292ec 3px 3px;
+    font-size: 36px;
+    font-family: revert;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    line-height: 25px;
+}
+
+.tag {
+    margin-right: 10px;
+    display: inline;
+    float : bottom;
+}
+
+.list_projets button {
+  float : bottom;
+  position : relative;
+}
+
+
+.status {
+  border-radius: 2px;
+    padding: .25em .5rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: .3px;
+}
+
+.icon-color-orange .p-chip{
+  color : orange !important;
+}
   `
   ]
 })
@@ -71,5 +138,9 @@ export class ProjetsComponent implements OnInit {
       }
     }
     return null;
+  }
+
+  redirectLink(link) {
+    window.open(link);
   }
 }
