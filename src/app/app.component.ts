@@ -2,6 +2,7 @@ import { Projet } from './projets/Projet';
 import { Projets } from './projets/data-projets';
 import { Component } from '@angular/core';
 import {MenuItem} from 'primeng/api';
+import { RouterOutlet } from '@angular/router';
 
 
 @Component({
@@ -14,13 +15,15 @@ export class AppComponent {
     items: MenuItem[];
 
     projects : MenuItem[] = [ {
-      label : 'Afficher touts',
+      label : 'Afficher tout',
+      icon : 'pi pi-list',
       routerLink : ['/projets']
     },
-  {
+  /* {
     label: 'Ajouté un projets',
+    icon : 'far fa-plus-square',
     routerLink : ['/newProjets']
-  },
+  }, */
   {
     separator : true
   },
@@ -31,8 +34,9 @@ export class AppComponent {
 
         Projets.forEach(element => {
           this.projects.push (
-            {label : element.title,
+            {label : element.id + ' >> ' + element.title,
             routerLink: ['/projets/' + element.id],
+            escape : true
             }
           )
         });
@@ -54,7 +58,7 @@ export class AppComponent {
           },
           {
             label:'Projets',
-            icon:'pi pi-fw pi-users',
+            icon : 'fas fa-archive',
             style : 'color : red',
             items: this.projects
           }

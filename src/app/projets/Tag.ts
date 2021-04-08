@@ -3,4 +3,5 @@ export class Tag {
   icon : string;
   severity : string;
   color : string;
+  degree : number;
 }

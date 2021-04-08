@@ -21,7 +21,11 @@ import { AjoutProjetsComponent } from './ajout-projets/ajout-projets.component';
 import {InputTextareaModule} from 'primeng/inputtextarea';
 import {DropdownModule} from 'primeng/dropdown';
 import { FormsModule } from '@angular/forms';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {ChipsModule} from 'primeng/chips';
+import {MultiSelectModule} from 'primeng/multiselect';
+import {KnobModule} from 'primeng/knob';
+import {GalleriaModule} from 'primeng/galleria';
 
 
 @NgModule({
@@ -33,6 +37,7 @@ import { FormsModule } from '@angular/forms';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     MenubarModule,
     InputTextModule,
@@ -47,7 +52,11 @@ import { FormsModule } from '@angular/forms';
     ChipModule,
     InputTextareaModule,
     DropdownModule,
-    FormsModule
+    FormsModule,
+    ChipsModule,
+    MultiSelectModule,
+    KnobModule,
+    GalleriaModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
