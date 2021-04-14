@@ -1,12 +1,16 @@
+import { AppComponent } from './../app.component';
 import { Projet } from './Projet';
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Projets } from './data-projets';
 import { Message, MessageService } from 'primeng/api';
+import { Tag } from './Tag';
 
 @Component({
   selector: 'app-projets',
   template: `
+
+
     <div *ngIf="this.projet != null">
     <div class="p-grid">
         <div class="list_projets p-shadow-6 p-col p-as-center" style="text-align :center">
@@ -95,6 +99,7 @@ import { Message, MessageService } from 'primeng/api';
               <button id="tri_button_date" pButton pRipple type="button" label="Trié par date" class="p-button-raised p-mb-8" icon="{{this.iconTriDate}}" (click)="sortDate()">
                 </button>
               </div>
+
             </div>
           </div>
       </div>
@@ -202,14 +207,11 @@ import { Message, MessageService } from 'primeng/api';
     font-size: 12px;
     letter-spacing: .3px;
 }
-
-.icon-color-orange .p-chip{
-  color : orange !important;
-}
   `
   ]
 })
 export class ProjetsComponent implements OnInit {
+  language = AppComponent.language
 
   projet : Projet = Projet[0];
   projets : Projet[] = Projets;

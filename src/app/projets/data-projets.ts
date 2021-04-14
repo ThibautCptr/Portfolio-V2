@@ -22,7 +22,7 @@ export const Projets : Projet[] = [
       {
         value : 'CSS',
         icon : 'fab fa-css3',
-        severity : 'success',
+        severity : 'info',
         color : 'blue',
         degree : 50
 
@@ -30,7 +30,7 @@ export const Projets : Projet[] = [
       {
         value : 'Javascript',
         icon : 'fab fa-js',
-        severity : 'success',
+        severity : 'info',
         color : 'rgb(226, 226, 21)',
         degree : 30
 
@@ -38,7 +38,7 @@ export const Projets : Projet[] = [
       {
         value : 'Angular',
         icon : 'fab fa-angular',
-        severity : 'success',
+        severity : 'info',
         color : 'red',
         degree : 30
 
@@ -65,7 +65,7 @@ export const Projets : Projet[] = [
       {
         value : 'CSS',
         icon : 'fab fa-css3',
-        severity : 'success',
+        severity : 'info',
         color : 'blue',
         degree : 10
 
@@ -73,7 +73,7 @@ export const Projets : Projet[] = [
       {
         value : 'Javascript',
         icon : 'fab fa-js',
-        severity : 'success',
+        severity : 'info',
         color : 'yellow',
         degree : 70
 
@@ -81,7 +81,7 @@ export const Projets : Projet[] = [
       {
         value : 'Angular',
         icon : 'fab fa-angular',
-        severity : 'success',
+        severity : 'info',
         color : 'red',
         degree : 70
 
@@ -109,7 +109,7 @@ export const Projets : Projet[] = [
       {
         value : 'CSS',
         icon : 'fab fa-css3',
-        severity : 'success',
+        severity : 'info',
         color : 'blue',
         degree : 50
 
@@ -117,7 +117,7 @@ export const Projets : Projet[] = [
       {
         value : 'Javascript',
         icon : 'fab fa-js',
-        severity : 'success',
+        severity : 'info',
         color : 'rgb(226, 226, 21)',
         degree : 15
 

@@ -20,20 +20,26 @@ import { Chip, ChipModule } from 'primeng/chip';
 import { AjoutProjetsComponent } from './ajout-projets/ajout-projets.component';
 import {InputTextareaModule} from 'primeng/inputtextarea';
 import {DropdownModule} from 'primeng/dropdown';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {ChipsModule} from 'primeng/chips';
 import {MultiSelectModule} from 'primeng/multiselect';
 import {KnobModule} from 'primeng/knob';
 import {GalleriaModule} from 'primeng/galleria';
-
+import { IndexComponent } from './index/index.component';
+import {Panel, PanelModule} from 'primeng/panel';
+import { ContactComponent } from './contact/contact.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ContactService } from './contact/contact.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     AboutMeComponent,
     ProjetsComponent,
-    AjoutProjetsComponent
+    AjoutProjetsComponent,
+    IndexComponent,
+    ContactComponent,
   ],
   imports: [
     BrowserModule,
@@ -57,8 +63,14 @@ import {GalleriaModule} from 'primeng/galleria';
     MultiSelectModule,
     KnobModule,
     GalleriaModule,
+    PanelModule,
+    ReactiveFormsModule,
+    HttpClientModule
+
   ],
-  providers: [],
+  providers: [
+    ContactService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

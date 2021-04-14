@@ -7,11 +7,15 @@ import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html'
+  templateUrl: './app.component.html',
+  styleUrls : ["./app.component.css"]
 })
 
 
 export class AppComponent {
+
+    static language : string = "FR";
+
     items: MenuItem[];
 
     projects : MenuItem[] = [ {
@@ -52,7 +56,7 @@ export class AppComponent {
           },
           {
               label:'A propos de moi',
-              icon:'pi pi-fw pi-user',
+              icon:'fas fa-user',
               routerLink: ['/about'],
               style : 'color : red',
           },
@@ -61,6 +65,11 @@ export class AppComponent {
             icon : 'fas fa-archive',
             style : 'color : red',
             items: this.projects
+          },
+          {
+            label : 'Contacts',
+            icon : 'fas fa-envelope',
+            routerLink : ['/contact']
           }
         ]
       }
