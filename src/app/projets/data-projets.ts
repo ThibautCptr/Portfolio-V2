@@ -5,7 +5,7 @@ export const Projets : Projet[] = [
     id : 0,
     title : "Portfolio V2",
     date : new Date(2021,3,1),
-    url_img : "https://www.pole-emploi.fr/files/live/sites/PE/files/actualites/portfolio582x1528437083075604181.jpg",
+    url_img : "http://image.noelshack.com/fichiers/2021/23/5/1623429979-image-2021-06-11-184617.png",
     description : "Refonte du portfolio en utilisant AngularJS. Utilisation appliqué d'Angular",
     git_link : "https://github.com/ThibautCptr/Portfolio-V2",
     dl_link : "https://github.com/ThibautCptr/Portfolio-V2/archive/refs/heads/master.zip",

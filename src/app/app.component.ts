@@ -14,6 +14,9 @@ import { RouterOutlet } from '@angular/router';
 
 export class AppComponent {
 
+    static cptProjet : number = 0
+
+
     static language : string = "FR";
 
     items: MenuItem[];
@@ -35,14 +38,16 @@ export class AppComponent {
 ]
 
     ngOnInit(){
-
+      AppComponent.cptProjet = 1
         Projets.forEach(element => {
+
           this.projects.push (
-            {label : element.id + ' >> ' + element.title,
+            {label : AppComponent.cptProjet + " | " + element.title,
             routerLink: ['/projets/' + element.id],
             escape : true
             }
           )
+          AppComponent.cptProjet++;
         });
 
 
