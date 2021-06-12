@@ -39,6 +39,19 @@ import { Tag } from './Tag';
           </p-divider>
           <p>{{this.projet.description}}</p>
 
+
+            <p-divider align="center" type="solid">
+              <div class="p-d-inline-flex p-ai-center">
+              <i class="far fa-images fa-2x" style="margin-right : 5px"> </i>
+                  <h1>Aperçu</h1>
+              </div>
+            </p-divider>
+            <div *ngFor="let s of this.projet.screen" style="margin: 0% 0% 0% 30%; display : inline">
+              <img src="https://d1fmx1rbmqrxrr.cloudfront.net/cnet/optim/i/edit/2019/04/eso1644bsmall__w770.jpg" class="detail_img_aperçu">
+              <img src="https://d1fmx1rbmqrxrr.cloudfront.net/cnet/optim/i/edit/2019/04/eso1644bsmall__w770.jpg" class="detail_img_aperçu">
+              <img src="https://d1fmx1rbmqrxrr.cloudfront.net/cnet/optim/i/edit/2019/04/eso1644bsmall__w770.jpg" class="detail_img_aperçu">
+            </div>
+
           <p-divider align="center" type="solid">
             <div class="p-d-inline-flex p-ai-center">
             <i class="fas fa-code-branch fa-2x" style="margin-right : 5px"> </i>
@@ -163,6 +176,17 @@ import { Tag } from './Tag';
   width: calc(100% - 60%);
   height: calc(100% - 40%);
   margin-right: 25px;
+  margin-bottom: 15px;
+  float : left;
+
+}
+
+.detail_img_aperçu {
+  border: #929292ec 3px solid;
+  width: 375px;
+
+  margin-right: 5%;
+  margin-bottom: 15px;
   float : left;
 
 }
@@ -213,7 +237,7 @@ import { Tag } from './Tag';
 export class ProjetsComponent implements OnInit {
   language = AppComponent.language
 
-  projet : Projet = Projet[0];
+  projet : Projet = Projet[Projets.length - 1];
   projets : Projet[] = Projets;
 
   msg : Message;
@@ -227,6 +251,7 @@ export class ProjetsComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.sortId();
     this.msg = {severity: 'error' , summary : 'Error' , detail : 'Projets inéxistant'};
   }
 
@@ -243,13 +268,20 @@ export class ProjetsComponent implements OnInit {
     window.open(link);
   }
 
+  sortId() : Projet[] {
+    return this.projets.sort((x:Projet,y:Projet) => {
+      if(x.id <= y.id) return 1;
+      return -1
+    });
+  }
+
   sortNom() : Projet[] {
 
     if(this.cptNom == 0) {
       this.iconTri = "pi pi-sort-alpha-up"
       this.cptNom++
       return this.projets.sort((x:Projet,y:Projet) => {
-        if(x.title >= y.title) return 1;
+        if(x.title <= y.title) return 1;
         return -1
       });
     }
@@ -267,7 +299,7 @@ export class ProjetsComponent implements OnInit {
       this.iconTri = "pi pi-sort-numeric-down"
       this.cptNom = 0
       return this.projets.sort((x:Projet,y:Projet) => {
-        if(x.id >= y.id) return 1;
+        if(x.id <= y.id) return 1;
         return -1
       });
     }

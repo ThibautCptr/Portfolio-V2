@@ -147,7 +147,7 @@ export class IndexComponent implements OnInit {
 
   projets : Projet[] = Projets;
 
-  p : Projet = this.projets[0];
+  p : Projet = this.projets[Projets.length - 1];
   constructor() { }
 
   ngOnInit(): void {

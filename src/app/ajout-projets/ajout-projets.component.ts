@@ -87,7 +87,8 @@ export class AjoutProjetsComponent implements OnInit {
           git_link : (document.getElementById('git_link') as HTMLInputElement).value,
           dl_link : "",
           status: this.selectedStatus.name,
-          tag: this.selectedTags
+          tag: this.selectedTags,
+          screen : []
         }
       )
 

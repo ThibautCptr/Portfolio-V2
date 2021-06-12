@@ -9,11 +9,12 @@ export class Projet {
   git_link : string;
   dl_link : string;
   status : string;
-  tag : Tag[]
+  tag : Tag[];
+  screen : string[];
 
   static cpt : number = 0;
 
-  constructor(title : string, url_img : string, description : string, git_link : string , status : string , tag : Tag[]) {
+  constructor(title : string, url_img : string, description : string, git_link : string , status : string , tag : Tag[], screen : string[]) {
     this.id = Projet.cpt++;
     this.title = title;
     this.url_img = url_img;
@@ -21,6 +22,7 @@ export class Projet {
     this.git_link = git_link;
     this.status = status;
     this.tag = tag;
+    this.screen = screen;
   }
 }
 
