@@ -39,19 +39,22 @@ import { Tag } from './Tag';
           </p-divider>
           <p>{{this.projet.description}}</p>
 
-
-            <p-divider align="center" type="solid">
+          <p-divider align="center" type="solid">
               <div class="p-d-inline-flex p-ai-center">
               <i class="far fa-images fa-2x" style="margin-right : 5px"> </i>
                   <h1>Aperçu</h1>
               </div>
             </p-divider>
-            <div *ngFor="let s of this.projet.screen" style="margin: 0% 0% 0% 30%; display : inline">
-              <img src="https://d1fmx1rbmqrxrr.cloudfront.net/cnet/optim/i/edit/2019/04/eso1644bsmall__w770.jpg" class="detail_img_aperçu">
-              <img src="https://d1fmx1rbmqrxrr.cloudfront.net/cnet/optim/i/edit/2019/04/eso1644bsmall__w770.jpg" class="detail_img_aperçu">
-              <img src="https://d1fmx1rbmqrxrr.cloudfront.net/cnet/optim/i/edit/2019/04/eso1644bsmall__w770.jpg" class="detail_img_aperçu">
-            </div>
-
+            <div *ngIf="this.projet.screen.length != 0">
+              <p-carousel [value]="this.projet.screen">
+                  <ng-template let-s pTemplate="item">
+                    <img src={{s}} class="detail_img_aperçu">
+                  </ng-template>
+              </p-carousel>
+          </div>
+          <div *ngIf="this.projet.screen.length == 0">
+            <p> Il n'y a pas d'aperçu de ce projet pour le moment </p>
+          </div>
           <p-divider align="center" type="solid">
             <div class="p-d-inline-flex p-ai-center">
             <i class="fas fa-code-branch fa-2x" style="margin-right : 5px"> </i>
@@ -183,17 +186,14 @@ import { Tag } from './Tag';
 
 .detail_img_aperçu {
   border: #929292ec 3px solid;
-  width: 375px;
-
-  margin-right: 5%;
-  margin-bottom: 15px;
-  float : left;
-
+  width: calc(100% - 40%);
+  height: calc(100% - 20%);
 }
+
 .detail_img {
   border: #929292ec 3px solid;
-  width: calc(100% - 60%);
-  height: calc(100% - 40%);
+  width: calc(100% - 30%);
+  height: calc(100% - 10%);
   margin-right: 25px;
   float : center;
 
@@ -231,6 +231,7 @@ import { Tag } from './Tag';
     font-size: 12px;
     letter-spacing: .3px;
 }
+
   `
   ]
 })

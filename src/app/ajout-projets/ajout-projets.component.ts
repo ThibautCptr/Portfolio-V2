@@ -88,7 +88,7 @@ export class AjoutProjetsComponent implements OnInit {
           dl_link : "",
           status: this.selectedStatus.name,
           tag: this.selectedTags,
-          screen : []
+          screen : [],
         }
       )
 

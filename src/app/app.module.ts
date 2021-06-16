@@ -31,6 +31,7 @@ import {Panel, PanelModule} from 'primeng/panel';
 import { ContactComponent } from './contact/contact.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ContactService } from './contact/contact.service';
+import {CarouselModule} from 'primeng/carousel';
 
 @NgModule({
   declarations: [
@@ -65,7 +66,8 @@ import { ContactService } from './contact/contact.service';
     GalleriaModule,
     PanelModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    CarouselModule
 
   ],
   providers: [
