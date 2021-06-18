@@ -6,16 +6,17 @@ import { Projet } from '../projets/Projet';
 @Component({
   selector: 'app-index',
   template: `
+
   <div class="p-grid p-ai-center">
-  <div class="header_content p-col">
+    <div class="header_content p-col">
       <h2>BIENVENUE SUR MON PORTFOLIO</h2>
     </div>
-</div>
+  </div>
 
 <div class="p-grid p-ai-center vertical-container content">
 <div class="p-grid">
     <div class="p-col">
-        <p-panel header="Dernier projets">
+        <p-panel icons="fas fa-dice-one" header="Dernier projets">
         <div class="p-grid p-ai-start vertical-container">
               <div class="p-col" style="margin-top : -35px">
                 <h3 class="header-item">{{p.title}}</h3>
@@ -122,7 +123,9 @@ import { Projet } from '../projets/Projet';
   padding : 15px;
   background-color : white;
   text-align: center;
-  width : 15%;
+  width : 20%;
+  border : 20px solid inset black;
+  border-radius : 30px
 }
 
 
@@ -148,9 +151,22 @@ export class IndexComponent implements OnInit {
   projets : Projet[] = Projets;
 
   p : Projet = this.projets[Projets.length - 1];
+
+  static displayBasic: boolean = true;
+
+
   constructor() { }
 
   ngOnInit(): void {
+
+  }
+
+  getStaticDisplayBasic() : boolean {
+    return IndexComponent.displayBasic;
+  }
+
+  setStaticDisplayBasic() : void{
+    IndexComponent.displayBasic = false;
   }
 
   redirectLink(link) {

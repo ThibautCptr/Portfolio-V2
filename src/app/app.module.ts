@@ -32,6 +32,7 @@ import { ContactComponent } from './contact/contact.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ContactService } from './contact/contact.service';
 import {CarouselModule} from 'primeng/carousel';
+import {DialogModule} from 'primeng/dialog';
 
 @NgModule({
   declarations: [
@@ -67,11 +68,13 @@ import {CarouselModule} from 'primeng/carousel';
     PanelModule,
     ReactiveFormsModule,
     HttpClientModule,
-    CarouselModule
+    CarouselModule,
+    DialogModule
 
   ],
   providers: [
-    ContactService
+    ContactService,
+    ProjetsComponent
   ],
   bootstrap: [AppComponent]
 })

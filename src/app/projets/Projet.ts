@@ -1,5 +1,5 @@
 import {Tag} from "../projets/Tag"
-
+import { Screen } from "./Screen";
 export class Projet {
   id : number;
   title: string;
@@ -10,11 +10,11 @@ export class Projet {
   dl_link : string;
   status : string;
   tag : Tag[];
-  screen : string[];
+  screen : Screen[];
 
   static cpt : number = 0;
 
-  constructor(title : string, url_img : string, description : string, git_link : string , status : string , tag : Tag[], screen : string[]) {
+  constructor(title : string, url_img : string, description : string, git_link : string , status : string , tag : Tag[], screen : Screen[]) {
     this.id = Projet.cpt++;
     this.title = title;
     this.url_img = url_img;

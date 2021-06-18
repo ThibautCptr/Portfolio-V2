@@ -42,7 +42,8 @@ export class AppComponent {
         Projets.forEach(element => {
 
           this.projects.push (
-            {label : AppComponent.cptProjet + " | " + element.title,
+            {label : element.title,
+            icon : "fas fa-dice-" + numberToText(AppComponent.cptProjet),
             routerLink: ['/projets/' + element.id],
             escape : true
             }
@@ -79,3 +80,21 @@ export class AppComponent {
         ]
       }
     }
+
+function numberToText(cptProjet: number) {
+  switch(cptProjet) {
+    case 1:
+      return "one";
+    case 2:
+      return "two";
+    case 3:
+      return "three";
+    case 4:
+      return "four";
+    case 5:
+      return "five";
+    case 6:
+      return "six";
+    }
+}
+

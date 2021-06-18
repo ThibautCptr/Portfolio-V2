@@ -37,9 +37,17 @@ export const Projets : Projet[] = [
       }
     ],
     screen : [
-      "https://image.noelshack.com/fichiers/2021/53/6/1609613825-image-2021-01-02-195707.png",
-      "https://d1fmx1rbmqrxrr.cloudfront.net/cnet/optim/i/edit/2019/04/eso1644bsmall__w770.jpg",
-      "https://d1fmx1rbmqrxrr.cloudfront.net/cnet/optim/i/edit/2019/04/eso1644bsmall__w770.jpg",
+      {
+        url : "https://image.noelshack.com/fichiers/2021/53/6/1609613825-image-2021-01-02-195707.png",
+        title : "Page d'acceuil",
+        id_projet : 0
+      },
+      {
+        url : "https://d1fmx1rbmqrxrr.cloudfront.net/cnet/optim/i/edit/2019/04/eso1644bsmall__w770.jpg",
+        title : "Test",
+        id_projet : 0
+
+      }
     ]
   },
   {

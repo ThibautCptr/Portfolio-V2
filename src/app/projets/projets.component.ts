@@ -1,16 +1,18 @@
 import { AppComponent } from './../app.component';
 import { Projet } from './Projet';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Projets } from './data-projets';
 import { Message, MessageService } from 'primeng/api';
 import { Tag } from './Tag';
+import { Screen } from './Screen';
 
 @Component({
   selector: 'app-projets',
   template: `
 
 
+    <div *ngIf="this.apercu == null">
     <div *ngIf="this.projet != null">
     <div class="p-grid">
         <div class="list_projets p-shadow-6 p-col p-as-center" style="text-align :center">
@@ -48,8 +50,11 @@ import { Tag } from './Tag';
             <div *ngIf="this.projet.screen.length != 0">
               <p-carousel [value]="this.projet.screen">
                   <ng-template let-s pTemplate="item">
-                    <img src={{s}} class="detail_img_aperçu">
+                    <img src={{s.url}} class="detail_img_aperçu" (click)="setApercu(s)">
+                    <h4>{{s.title}}</h4>
+
                   </ng-template>
+
               </p-carousel>
           </div>
           <div *ngIf="this.projet.screen.length == 0">
@@ -150,7 +155,7 @@ import { Tag } from './Tag';
             </div>
           </div>
 
-          <div class="p-grid vertical-container">
+          <div class="p-grid vertical-container p-as-center">
             <div class="p-col p-as-end">
               <button class="git_link" pButton pRipple type="button" label="En savoir plus" class="p-button-raised p-mb-8" icon="pi pi-angle-double-right" routerLink="/projets/{{p.id}}">
               </button>
@@ -165,6 +170,20 @@ import { Tag } from './Tag';
           </div>
         </div>
       </div>
+    </div>
+
+    <div *ngIf="this.apercu != null">
+      <div class="apercu_projet p-shadow-6 p-col p-as-center" style="text-align :center">
+        <h2>{{this.apercu.title}}</h2>
+        <img src="{{this.apercu.url}}" alt="">
+        <div class="p-grid p-ai-end vertical-container" style="text-align : center">
+              <div class="p-col">
+                <button id="return_projets" pButton pRipple type="button" label="Retour au projet" class="p-button-raised p-mb-8" icon="pi pi-angle-double-right" (click)="this.apercu = null">
+                </button>
+              </div>
+            </div>
+      </div>
+    </div>
 
   `,
   styles: [ `
@@ -172,6 +191,16 @@ import { Tag } from './Tag';
   margin: 40px 25%;
   padding : 15px;
   background-color : white;
+}
+
+.apercu_projet {
+  margin: 20px 10%;
+  padding : 15px;
+  background-color : white;
+}
+
+.apercu_projet img {
+  border : solid black 1px;
 }
 
 .list_img {
@@ -247,6 +276,9 @@ export class ProjetsComponent implements OnInit {
   cptNom : number = 0;
   cptDate : number = 0;
 
+  apercu : Screen;
+
+
   constructor(private route: ActivatedRoute) {
     this.route.params.subscribe( params => this.projet = this.search(params.id) );
   }
@@ -291,7 +323,7 @@ export class ProjetsComponent implements OnInit {
       this.iconTri = "pi pi-sort-alpha-down"
       this.cptNom++
       return this.projets.sort((x:Projet,y:Projet) => {
-        if(x.title <= y.title) return 1;
+        if(x.title >= y.title) return 1;
         return -1
       });
     }
@@ -323,6 +355,11 @@ export class ProjetsComponent implements OnInit {
         return -1
       });
     }
+  }
+
+
+  public setApercu(img : Screen) : void {
+    this.apercu = img;
   }
 
   getDate(p : Projet) : string {
