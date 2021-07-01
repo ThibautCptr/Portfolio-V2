@@ -11,8 +11,7 @@ import { Screen } from './Screen';
   selector: 'app-projets',
   template: `
 
-
-    <div *ngIf="this.apercu == null">
+<div *ngIf="this.apercu == null">
     <div *ngIf="this.projet != null">
     <div class="p-grid">
         <div class="list_projets p-shadow-6 p-col p-as-center" style="text-align :center">
@@ -170,10 +169,18 @@ import { Screen } from './Screen';
           </div>
         </div>
       </div>
+
+
     </div>
 
     <div *ngIf="this.apercu != null">
       <div class="apercu_projet p-shadow-6 p-col p-as-center" style="text-align :center">
+        <p-divider align="center" type="solid">
+          <div class="p-d-inline-flex p-ai-center">
+          <i class="far fa-images fa-2x" style="margin-right : 5px"> </i>
+              <h1>Aperçu</h1>
+          </div>
+        </p-divider>
         <h2>{{this.apercu.title}}</h2>
         <img src="{{this.apercu.url}}" alt="">
         <div class="p-grid p-ai-end vertical-container" style="text-align : center">
@@ -184,6 +191,7 @@ import { Screen } from './Screen';
             </div>
       </div>
     </div>
+
 
   `,
   styles: [ `
@@ -201,6 +209,7 @@ import { Screen } from './Screen';
 
 .apercu_projet img {
   border : solid black 1px;
+  margin-bottom : 25px;
 }
 
 .list_img {
@@ -286,6 +295,7 @@ export class ProjetsComponent implements OnInit {
   ngOnInit(): void {
     this.sortId();
     this.msg = {severity: 'error' , summary : 'Error' , detail : 'Projets inéxistant'};
+    this.apercu = null;
   }
 
   search(id : number) : Projet {

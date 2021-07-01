@@ -9,7 +9,7 @@ import { Projet } from '../projets/Projet';
 
   <div class="p-grid p-ai-center">
     <div class="header_content p-col">
-      <h2>BIENVENUE SUR MON PORTFOLIO</h2>
+      <h2> - BIENVENUE SUR MON PORTFOLIO - </h2>
     </div>
   </div>
 
@@ -124,8 +124,9 @@ import { Projet } from '../projets/Projet';
   background-color : white;
   text-align: center;
   width : 20%;
-  border : 20px solid inset black;
-  border-radius : 30px
+  border : 5px #ecececec;
+  border-style: inset;
+  border-radius : 30px;
 }
 
 
