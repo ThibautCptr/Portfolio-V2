@@ -35,7 +35,7 @@ import { Screen } from './Screen';
           <p-divider align="center" type="solid">
             <div class="p-d-inline-flex p-ai-center">
             <i class="fas fa-file-alt fa-2x" style="margin-right : 5px"> </i>
-                <h1>Déscription</h1>
+                <h1>Description</h1>
             </div>
           </p-divider>
           <p>{{this.projet.description}}</p>
