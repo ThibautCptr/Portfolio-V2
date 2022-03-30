@@ -5,7 +5,7 @@ export const Projets : Projet[] = [
     id : 0,
     title : "PROJET REFONTE SITE IUT LENS",
     date : new Date(2019,11,1),
-    url_img : "https://image.noelshack.com/fichiers/2021/53/6/1609613825-image-2021-01-02-195707.png",
+    url_img : "../../assets/images/refonte_site_iut_projet/refonte_site_iut_lens.png",
     description : "Projet sur deux mois où nous devions recrée cette page ainsi que plusieurs autres en respectant des consignes et la chartes graphiques du site",
     git_link : "",
     dl_link : "",
@@ -38,12 +38,12 @@ export const Projets : Projet[] = [
     ],
     screen : [
       {
-        url : "https://image.noelshack.com/fichiers/2021/53/6/1609613825-image-2021-01-02-195707.png",
+        url : "../../assets/images/refonte_site_iut_lens.png",
         title : "Page d'acceuil",
         id_projet : 0
       },
       {
-        url : "https://d1fmx1rbmqrxrr.cloudfront.net/cnet/optim/i/edit/2019/04/eso1644bsmall__w770.jpg",
+        url : "../../assets/images/image_base.jpeg",
         title : "Test",
         id_projet : 0
 
@@ -54,7 +54,7 @@ export const Projets : Projet[] = [
     id : 1,
     title : "PROJET Portal",
     date : new Date(2020,5,1),
-    url_img : "https://upload.wikimedia.org/wikipedia/commons/1/12/Portal_2_Official_Logo.png",
+    url_img : "../../assets/images/Portal_projet/Portal_2_Official_Logo.png",
     description : "Projet de groupes de 3 personnes où nous devions recrée un jeu en s'inspirant des méchaniques du jeu Portal \n Nous devions apprendre à utiliser le logiciel Unity et le language C# sur une durée de deux mois",
     git_link : "https://github.com/ThibautCptr/Gateway",
     dl_link : "https://github.com/ThibautCptr/Gateway/archive/refs/heads/main.zip",
@@ -92,7 +92,7 @@ export const Projets : Projet[] = [
     id: 2,
     title : "Projet Marathon",
     date : new Date(2020,11,1),
-    url_img : "https://bankingblog.accenture.com/wp-content/uploads/userphoto/18.jpg",
+    url_img : "../../assets/images/marathon_projet/image_marathon.jpg",
     description : "Projet marathon sur 3 jours en groupes de 6 élèves. \n Nous devions utiliser du language PHP/HTML/CSS et du SQL pour répondre a un énoncé dans le but de crée une ludothque de jeux de société",
     git_link : "https://github.com/ThibautCptr/Ludotheque",
     dl_link : "https://github.com/ThibautCptr/Ludotheque/archive/refs/heads/main.zip",
@@ -146,7 +146,7 @@ export const Projets : Projet[] = [
     id : 3,
     title : "Portfolio V1",
     date : new Date(2021,0,1),
-    url_img : "https://blog.corp-site.envato.com/cdn-cgi/image/width=1200,quality=95,format=auto/uploads/2020/06/SOC101_Portfolio_Guide.png",
+    url_img : "../../assets/images/portfolio_v1_projet/portfolio_v1.jpg",
     description : "Crée un portfolio afin de me présenter plus en profondeur, de présenter mes projets et montrer mes compétences. \n Utilisation pour la premiére fois du javascript.",
     git_link : "https://github.com/ThibautCptr/Portfolio",
     dl_link : "https://github.com/ThibautCptr/Portfolio/archive/refs/heads/main.zip",
@@ -184,7 +184,7 @@ export const Projets : Projet[] = [
     id : 4,
     title : "Projet AGIL'IT",
     date : new Date(2021,2,1),
-    url_img : "https://maxime-lagache.github.io/portfolio_maxime_lagache/img/agil-it.png",
+    url_img : "../../assets/images/agil'IT_projet/agil'IT_projet_image.png",
     description : "Pendant une durée de 48 heures, il a fallu réaliser une ludothèque à l’aide du Framework Angular, des langages HTML, CSS et TypeScript, d’un serveur API (avec Laravel) et l’outil collaboratif gitlab. Le principe de ce projet était de travailler sous les restrictions de travail d'une entreprise, en applicant la méthode agile.",
     git_link : "",
     dl_link : "",
